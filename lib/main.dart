@@ -1,10 +1,6 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:maemyok_amcc/pages/DetailItem.dart';
-import 'package:maemyok_amcc/pages/GetStarted.dart';
-import 'package:maemyok_amcc/pages/HomeScreen.dart';
-import 'package:maemyok_amcc/pages/Profile.dart';
-import 'package:maemyok_amcc/pages/ProfileScreen.dart';
-import 'package:maemyok_amcc/pages/WebView.dart';
+import 'package:maemyok_amcc/routes/app_pages.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,19 +9,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Makan Yok',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        initialRoute: '/',
-        routes: {
-          '/': (context) => GetStarted(),
-          '/homepage': (context) => HomeScreen(),
-          '/detail': (context) => DetailItem(),
-          '/profile': (context) => ProfileView(),
-          '/webview': (context) => WebView(),
-        });
+    return GetMaterialApp(
+      title: 'Makan Yok',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: AppPages.Initial,
+      getPages: AppPages.routes,
+    );
   }
 }

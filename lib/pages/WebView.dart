@@ -6,12 +6,15 @@ class WebView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arguments = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map;
+
     return Scaffold(
       body: WebviewScaffold(
         appBar: AppBar(
-          title: Text('LinkedIn'),
+          title: Text(arguments['title']),
         ),
-        url: 'https://www.linkedin.com/in/herly-chahya/',
+        url: arguments['url'],
         initialChild: Container(
           color: Colors.white,
           child: const Center(

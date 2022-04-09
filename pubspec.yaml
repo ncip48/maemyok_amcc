@@ -30,6 +30,7 @@ dependencies:
   url_launcher: ^6.0.20
   webview_flutter: 3.0.1
   flutter_webview_plugin: 0.4.0
+  get: ^4.6.1
 
 dev_dependencies:
   google_fonts: ^2.3.1

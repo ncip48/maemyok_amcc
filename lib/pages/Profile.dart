@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maemyok_amcc/components/ListProfile.dart';
+import 'package:maemyok_amcc/constant/constant.dart';
+import 'package:maemyok_amcc/routes/app_routes.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProfileView extends StatelessWidget {
@@ -9,69 +12,39 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-        margin: EdgeInsets.symmetric(
-          vertical: 10,
-          horizontal: 30,
-        ),
+        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+        height: 75,
         decoration: BoxDecoration(
-          color: Colors.grey,
-          borderRadius: BorderRadius.circular(10),
-        ),
+            color: coklat, borderRadius: BorderRadius.circular(20)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             TextButton(
-              onPressed: () => Navigator.of(context).pushNamed('/homepage'),
+              onPressed: () => Navigator.of(context).pushNamed(Routes.Home),
               child: Container(
-                padding: EdgeInsets.only(top: 15),
-                height: 75,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 28,
-                      child: Image(
-                        image: AssetImage('assets/icon/home.png'),
-                      ),
-                    ),
-                    SizedBox(height: 10),
+                    Icon(Icons.home, color: putih),
                     Text(
-                      'Home',
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
+                      'Beranda',
+                      style: GoogleFonts.poppins(color: putih),
                     )
                   ],
                 ),
               ),
             ),
             TextButton(
-              onPressed: () => Navigator.of(context).pushNamed('/profile'),
+              onPressed: () => Navigator.of(context).pushNamed(Routes.Profile),
               child: Container(
-                padding: EdgeInsets.only(top: 15),
-                height: 75,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 28,
-                      child: Image(
-                        image: AssetImage('assets/icon/user.png'),
-                      ),
-                    ),
-                    SizedBox(height: 10),
+                    Icon(Icons.person, color: Colors.white),
                     Text(
                       'Profile',
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    )
+                      style: GoogleFonts.poppins(color: Colors.white),
+                    ),
                   ],
                 ),
               ),
@@ -85,14 +58,14 @@ class ProfileView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 140,
-              height: 140,
+              width: 120,
+              height: 120,
               padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  width: 4,
-                  color: Colors.redAccent,
+                  width: 3,
+                  color: merah,
                 ),
               ),
               child: ClipRRect(
@@ -108,84 +81,45 @@ class ProfileView extends StatelessWidget {
             ),
             Text(
               'Herly Chahya',
-              style: GoogleFonts.poppins(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: ukuran2,
             ),
             SizedBox(height: 32),
-            GestureDetector(
-              onTap: () async {
+            ListProfile(
+              label: 'mbahcip00@gmail.com',
+              icon: Icon(Icons.email),
+              action: () async {
                 await launch('mailto:mbahcip00@gmail.com');
               },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 34,
-                    height: 34,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.redAccent,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(Icons.email),
-                  ),
-                  SizedBox(width: 15),
-                  Text('mbahcip00@gmail.com'),
-                ],
-              ),
             ),
-            SizedBox(height: 15),
-            InkWell(
-              onTap: () async {
+            ListProfile(
+              label: '085156842765',
+              icon: Icon(Icons.phone),
+              action: () async {
                 await launch('tel:085156842765');
               },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 34,
-                    height: 34,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.redAccent,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(Icons.phone),
-                  ),
-                  SizedBox(width: 15),
-                  Text('085156842765'),
-                ],
+            ),
+            ListProfile(
+              label: 'Linkedin',
+              icon: Icon(Icons.abc),
+              action: () => Navigator.of(context).pushNamed(
+                Routes.WebView,
+                arguments: {
+                  'url': 'https://www.linkedin.com/in/herly-chahya/',
+                  'title': 'Linkedin'
+                },
               ),
             ),
-            SizedBox(height: 15),
-            InkWell(
-              onTap: () => Navigator.of(context).pushNamed('/webview'),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 34,
-                    height: 34,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.redAccent,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(Icons.abc),
-                  ),
-                  SizedBox(width: 15),
-                  Text('Linkedin'),
-                ],
+            ListProfile(
+              label: 'Facebook',
+              icon: Icon(Icons.facebook),
+              action: () => Navigator.of(context).pushNamed(
+                Routes.WebView,
+                arguments: {
+                  'url': 'https://facebook.com/herly.cp',
+                  'title': 'Facebook'
+                },
               ),
-            ),
+            )
           ],
         ),
       ),
