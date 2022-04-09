@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             TextButton(
-              onPressed: () {},
+              onPressed: () => Navigator.of(context).pushNamed('/homepage'),
               child: Container(
                 padding: EdgeInsets.only(top: 15),
                 height: 75,
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () => Navigator.of(context).pushNamed('/profile'),
               child: Container(
                 padding: EdgeInsets.only(top: 15),
                 height: 75,
@@ -113,7 +113,9 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/profile');
+                      },
                       child: Container(
                         padding: EdgeInsets.all(5),
                         width: 70,
@@ -227,7 +229,9 @@ class HomeScreen extends StatelessWidget {
                               Positioned(
                                 bottom: 0,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.of(context).pushNamed('/detail');
+                                  },
                                   child: Container(
                                     padding: EdgeInsets.all(16),
                                     decoration: BoxDecoration(
