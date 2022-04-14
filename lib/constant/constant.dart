@@ -11,6 +11,10 @@ TextStyle ukuran1 =
     GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w300);
 TextStyle ukuran2 =
     GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w700);
+TextStyle appBarText = GoogleFonts.poppins(
+    fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black);
+TextStyle titleTab =
+    GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.normal);
 
 abstract class Config {
   static const URL = "https://api.juber.co.id:9300/";

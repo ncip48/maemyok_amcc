@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:maemyok_amcc/components/ListProfile.dart';
 import 'package:maemyok_amcc/constant/constant.dart';
 import 'package:maemyok_amcc/routes/app_routes.dart';
@@ -11,47 +10,6 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-        height: 75,
-        decoration: BoxDecoration(
-            color: coklat, borderRadius: BorderRadius.circular(20)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pushNamed(Routes.Home),
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.home, color: putih),
-                    Text(
-                      'Beranda',
-                      style: GoogleFonts.poppins(color: putih),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            TextButton(
-              onPressed: () => Navigator.of(context).pushNamed(Routes.Profile),
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.person, color: Colors.white),
-                    Text(
-                      'Profile',
-                      style: GoogleFonts.poppins(color: Colors.white),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

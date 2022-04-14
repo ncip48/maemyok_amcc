@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'HomeScreen.dart';
+import 'package:maemyok_amcc/routes/app_routes.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({Key? key}) : super(key: key);
@@ -52,9 +51,7 @@ class GetStarted extends StatelessWidget {
             right: 0,
             child: TextButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return HomeScreen();
-                }));
+                Navigator.pushNamed(context, Routes.Home);
               },
               child: Container(
                 width: 215,
