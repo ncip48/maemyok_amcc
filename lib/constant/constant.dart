@@ -11,3 +11,12 @@ TextStyle ukuran1 =
     GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w300);
 TextStyle ukuran2 =
     GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w700);
+
+abstract class Config {
+  static const URL = "https://api.juber.co.id:9300/";
+  static const TOKEN =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5DSVAiLCJpZCI6IkpCMzAwMyIsImlhdCI6MTY0OTY3OTI5NCwiZXhwIjoxNjUwODg4ODk0fQ._79tKNIuxNpiUDyaUwZrg-38yNa8Q_z3-6SPIBT34iU';
+  static const UUID = 'a8a0182291acac77';
+  static const IRSAUTH = '08c9b11f3b4e6723542e61edd88d967b';
+  static const IDRS = "JB3003";
+}

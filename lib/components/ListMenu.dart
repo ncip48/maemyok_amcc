@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maemyok_amcc/constant/constant.dart';
+import 'package:maemyok_amcc/helper/helper.dart';
 
 class ListMenu extends StatelessWidget {
   final String label;
@@ -43,7 +44,9 @@ class ListMenu extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      label,
+                      label.length < 15
+                          ? label
+                          : label.substring(0, 15) + '...',
                       style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -63,7 +66,7 @@ class ListMenu extends StatelessWidget {
                       height: 15,
                     ),
                     Text(
-                      price,
+                      formatRupiah(int.parse(price)),
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
@@ -79,7 +82,23 @@ class ListMenu extends StatelessWidget {
             child: Container(
               height: 142,
               width: 142,
-              child: Image.asset(img),
+              padding: EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  width: 2,
+                  color: coklat,
+                ),
+              ),
+              child: img.contains('http')
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(99),
+                      child: Image.network(
+                        img,
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  : Image.asset(img),
             ),
           ),
         ],
