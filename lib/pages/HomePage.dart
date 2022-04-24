@@ -210,11 +210,11 @@ class _HomePage extends State<HomePage> {
                                     highlightColor: Color(0xFFF4F4F4),
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: Colors.black,
+                                        color: Color(0xFFEBEBF4),
                                         borderRadius: BorderRadius.circular(2),
                                       ),
                                       width: 40.0,
-                                      height: 8.0,
+                                      height: 0,
                                     ),
                                   ),
                                 );
@@ -257,11 +257,11 @@ class _HomePage extends State<HomePage> {
                                 child: Container(
                                   // padding: EdgeInsets.only(right: 100),
                                   decoration: BoxDecoration(
-                                    color: Colors.black,
+                                    color: Color(0xFFEBEBF4),
                                     borderRadius: BorderRadius.circular(99),
                                   ),
-                                  width: 50.0,
-                                  height: 8.0,
+                                  width: 48,
+                                  height: 0,
                                 ),
                               ),
                             )
@@ -297,7 +297,7 @@ class _HomePage extends State<HomePage> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 1,
-                    color: coklat,
+                    color: putih,
                   ),
                   color: putih,
                   borderRadius: BorderRadius.circular(15),
@@ -328,12 +328,12 @@ class _HomePage extends State<HomePage> {
                           highlightColor: Color(0xFFF4F4F4),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.black,
+                              color: Color(0xFFEBEBF4),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             margin: EdgeInsets.symmetric(horizontal: 30),
                             width: 40.0,
-                            height: 8.0,
+                            height: 0,
                           ),
                         ),
                       );
@@ -380,12 +380,12 @@ class _HomePage extends State<HomePage> {
                           highlightColor: Color(0xFFF4F4F4),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.black,
+                              color: Color(0xFFEBEBF4),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             margin: EdgeInsets.symmetric(horizontal: 30),
                             width: 40.0,
-                            height: 8.0,
+                            height: 0,
                           ),
                         ),
                       );

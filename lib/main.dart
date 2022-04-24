@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:maemyok_amcc/routes/app_pages.dart';
